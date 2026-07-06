@@ -120,3 +120,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
+# Use cookie-based session storage to prevent database writes in read-only environment
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
